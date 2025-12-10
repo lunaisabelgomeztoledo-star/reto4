@@ -1,6 +1,9 @@
 
 console.log("StreetN2K cargado correctamente");
-// Lista de productos
+
+// -----------------------------
+// LISTA DE PRODUCTOS
+// -----------------------------
 const productos = [
     { id: 1, nombre: "Camiseta N2K", precio: 55000, imagen: "imagen/producto1.jpg" },
     { id: 2, nombre: "Pantalón Cargo", precio: 120000, imagen: "imagen/producto2.jpg" },
@@ -9,14 +12,14 @@ const productos = [
 
 let carrito = [];
 
-
-// ----------------------
+// -----------------------------
 // MOSTRAR PRODUCTOS
-// ----------------------
+// -----------------------------
 function mostrarProductos() {
     const contenedor = document.getElementById("lista-productos");
-
     if (!contenedor) return;
+
+    contenedor.innerHTML = "";
 
     productos.forEach(p => {
         contenedor.innerHTML += `
@@ -34,20 +37,20 @@ function mostrarProductos() {
     });
 }
 
-
-// ----------------------
+// -----------------------------
 // AGREGAR AL CARRITO
-// ----------------------
+// -----------------------------
 function agregarCarrito(id) {
     const producto = productos.find(p => p.id === id);
     carrito.push(producto);
+
     guardarCarrito();
+    actualizarContador();
 }
 
-
-// ----------------------
+// -----------------------------
 // MOSTRAR CARRITO
-// ----------------------
+-------------------------------
 function mostrarCarrito() {
     const cuerpo = document.getElementById("carrito-body");
     const totalTexto = document.getElementById("total");
@@ -71,35 +74,44 @@ function mostrarCarrito() {
     totalTexto.textContent = total;
 }
 
-
-// ----------------------
-// ELIMINAR PRODUCTO
-// ----------------------
+// -----------------------------
+// ELIMINAR PRODUCTO DEL CARRITO
+// -----------------------------
 function eliminarCarrito(index) {
     carrito.splice(index, 1);
     guardarCarrito();
+    actualizarContador();
 }
 
-
-// ----------------------
-// GUARDAR EN LOCALSTORAGE
-// ----------------------
+// -----------------------------
+// GUARDAR CARRITO EN LOCALSTORAGE
+// -----------------------------
 function guardarCarrito() {
     localStorage.setItem("carritoN2K", JSON.stringify(carrito));
     mostrarCarrito();
 }
 
-
-// ----------------------
+// -----------------------------
 // CARGAR CARRITO
-// ----------------------
+// -----------------------------
 function cargarCarrito() {
     const data = localStorage.getItem("carritoN2K");
     if (data) carrito = JSON.parse(data);
 }
 
+// -----------------------------
+// CONTADOR DEL CARRITO
+// -----------------------------
+function actualizarContador() {
+    const contador = document.getElementById("contadorCarrito");
+    if (contador) contador.textContent = carrito.length;
+}
 
-// Inicialización
+// -----------------------------
+// INICIALIZACIÓN
+// -----------------------------
 cargarCarrito();
 mostrarProductos();
 mostrarCarrito();
+actualizarContador();
+

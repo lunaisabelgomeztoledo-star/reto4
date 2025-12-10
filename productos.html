@@ -12,7 +12,9 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
+
         <a class="navbar-brand" href="index.html">StreetN2K</a>
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -21,7 +23,14 @@
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
                 <li class="nav-item"><a class="nav-link active" href="productos.html">Productos</a></li>
-                <li class="nav-item"><a class="nav-link" href="compras.html">Compras</a></li>
+
+                <!-- contador del carrito -->
+                <li class="nav-item">
+                    <a class="nav-link" href="compras.html">
+                        Carrito <span id="contadorCarrito" class="badge bg-warning text-dark">0</span>
+                    </a>
+                </li>
+
                 <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
                 <li class="nav-item"><a class="nav-link" href="acerca.html">Acerca de</a></li>
             </ul>
@@ -33,11 +42,13 @@
     <h2 class="text-center">Nuestros Productos</h2>
 
     <div class="row" id="lista-productos">
-        <!-- Los productos se mostrarán aquí con JS -->
+        <!-- Aquí JS inserta los productos -->
     </div>
 </div>
 
 <script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
 
