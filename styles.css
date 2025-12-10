@@ -1,1 +1,10 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Ajustar imágenes de las cards */
+.card img {
+    height: 300px;
+    object-fit: cover;
+}
 
