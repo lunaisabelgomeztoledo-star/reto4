@@ -1,1 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Productos - Ropa StreetN2K</title>
+    <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+
+<header>
+    <h1>Ropa StreetN2K</h1>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="productos.html">Productos</a>
+        <a href="compras.html">Compras</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="acerca de.html">Acerca de</a>
+    </nav>
+</header>
+
+<section class="productos-container">
+    <h2>Nuestros Productos</h2>
+
+    <div class="producto-card">
+        <img src="imagen/producto1.jpg" alt="Producto 1" />
+        <h3>Chaqueta Oversize</h3>
+        <p>$120.000 COP</p>
+        <button>Comprar</button>
+    </div>
+
+    <div class="producto-card">
+        <img src="imagen/producto2.jpg" alt="Producto 2" />
+        <h3>Camiseta Streetwear</h3>
+        <p>$60.000 COP</p>
+        <button>Comprar</button>
+    </div>
+
+    <div class="producto-card">
+        <img src="imagen/producto3.jpg" alt="Producto 3" />
+        <h3>Pantalón Cargo</h3>
+        <p>$95.000 COP</p>
+        <button>Comprar</button>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 StreetN2K - Todos los derechos reservados</p>
+</footer>
+
+</body>
+</html>
 
